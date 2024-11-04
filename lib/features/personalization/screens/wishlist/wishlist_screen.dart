@@ -9,7 +9,10 @@ class WishlistScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('Wishlist',style: Theme.of(context).textTheme.headlineMedium,),
+        title: Text(
+          'Wishlist',
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
         backgroundColor: TColors.primary,
       ),
       body: Padding(

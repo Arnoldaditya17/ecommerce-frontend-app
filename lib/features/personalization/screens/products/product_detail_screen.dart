@@ -1,5 +1,7 @@
 import 'package:e_commerce_application_ui/common/widgets/icons/circular_icons.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/products/widgets/product_image_slider.dart';
+import 'package:e_commerce_application_ui/features/personalization/screens/products/widgets/product_meta_data.dart';
+import 'package:e_commerce_application_ui/features/personalization/screens/products/widgets/rating_and_share_widget.dart';
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:e_commerce_application_ui/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -29,10 +31,17 @@ class ProductDetailScreen extends StatelessWidget {
           children: [
             ProductImageSlider(darkMode: darkMode),
             const Padding(
-                padding: EdgeInsets.only(
-                    right: TSizes.defaultSpace,
-                    left: TSizes.defaultSpace,
-                    bottom: TSizes.defaultSpace))
+              padding: EdgeInsets.only(
+                  right: TSizes.defaultSpace,
+                  left: TSizes.defaultSpace,
+                  bottom: TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  RatingAndShareIcon(),
+                  ProductMetaData(),
+                ],
+              ),
+            )
           ],
         ),
       ),
