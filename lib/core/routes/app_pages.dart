@@ -67,7 +67,6 @@ class AppPages {
       name: _Paths.cartScreen,
       page: () => const CartScreen(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 450),
       binding: BindingsBuilder(() => {
         // You can define the binding for the side menu here
       }),

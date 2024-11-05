@@ -47,6 +47,8 @@ dependencies:
   lottie: ^3.1.0
   cached_network_image: ^3.4.1
   add_to_cart_animation: ^2.0.4
+  badges: ^3.1.2
+  readmore: ^3.0.0
 
 
   # The following adds the Cupertino Icons font to your application.

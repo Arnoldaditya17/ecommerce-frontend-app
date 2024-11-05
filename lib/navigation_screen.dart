@@ -31,9 +31,9 @@ class NavigationScreen extends StatelessWidget {
 
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'Home',selectedIcon: Icon(Iconsax.home,color: TColors.primary,),),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store',selectedIcon: Icon(Iconsax.home,color: TColors.primary,),),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist',selectedIcon: Icon(Iconsax.home,color: TColors.primary,),),
-            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile',selectedIcon: Icon(Iconsax.home,color: TColors.primary,),),
+            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store',selectedIcon: Icon(Iconsax.shop,color: TColors.primary,),),
+            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist',selectedIcon: Icon(Iconsax.heart,color: TColors.primary,),),
+            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile',selectedIcon: Icon(Iconsax.user,color: TColors.primary,),),
           ],
         ),
       ),

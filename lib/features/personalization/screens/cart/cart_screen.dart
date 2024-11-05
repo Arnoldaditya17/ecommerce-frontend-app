@@ -1,6 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
-import 'package:e_commerce_application_ui/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {

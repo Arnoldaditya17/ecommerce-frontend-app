@@ -4,6 +4,7 @@ import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import '../../../common/widgets/appbar/home_app_bar_widget.dart';
 import '../../../common/widgets/containers/primary_header_container.dart';
 import '../../../common/widgets/containers/search_container.dart';
 import '../../../common/widgets/texts/section_heading.dart';
@@ -24,19 +25,7 @@ class HomeScreen extends StatelessWidget {
             PrimaryHeaderContainer(
               child: Column(
                 children: [
-                  AppBar(
-                    backgroundColor: Colors.transparent,
-                    actions: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.shopping_cart_outlined,
-                          color: TColors.white.withOpacity(0.8),
-                          size: 26,
-                        ),
-                        onPressed: () => Get.toNamed(Routes.cartScreen),
-                      ),
-                    ],
-                  ),
+                  const HomeAppBarWidget(),
                   const SizedBox(
                     height: 10,
                   ),
@@ -72,8 +61,8 @@ class HomeScreen extends StatelessWidget {
                                 child: Column(
                                   children: [
                                     Container(
-                                      width: 80,
-                                      height: 80,
+                                      width: 65,
+                                      height: 65,
                                       padding: const EdgeInsets.all(TSizes.sm),
                                       decoration: BoxDecoration(
                                         color:
@@ -136,21 +125,18 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  Container(
-                    color: TColors.black,
-                    child: SizedBox(
-                      height: 280,
-                      child: ListView.builder(
-                        addAutomaticKeepAlives: true,
-                        itemCount: 3,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (_, index) {
-                          return const Padding(
-                            padding: EdgeInsets.only(right: 15.0),
-                            child: ProductCardVertical(),
-                          ); // Make sure you return the CourseCard here
-                        },
-                      ),
+                  SizedBox(
+                    height: 280,
+                    child: ListView.builder(
+                      addAutomaticKeepAlives: true,
+                      itemCount: 3,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (_, index) {
+                        return const Padding(
+                          padding: EdgeInsets.only(right: 15.0),
+                          child: ProductCardVertical(),
+                        ); // Make sure you return the CourseCard here
+                      },
                     ),
                   ),
                   const SizedBox(
@@ -167,21 +153,18 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  Container(
-                    color: TColors.black,
-                    child: SizedBox(
-                      height: 280,
-                      child: ListView.builder(
-                        addAutomaticKeepAlives: true,
-                        itemCount: 3,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (_, index) {
-                          return const Padding(
-                            padding: EdgeInsets.only(right: 15.0),
-                            child: ProductCardVertical(),
-                          ); // Make sure you return the CourseCard here
-                        },
-                      ),
+                  SizedBox(
+                    height: 280,
+                    child: ListView.builder(
+                      addAutomaticKeepAlives: true,
+                      itemCount: 3,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (_, index) {
+                        return const Padding(
+                          padding: EdgeInsets.only(right: 15.0),
+                          child: ProductCardVertical(),
+                        ); // Make sure you return the CourseCard here
+                      },
                     ),
                   ),
                 ],
@@ -193,3 +176,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
