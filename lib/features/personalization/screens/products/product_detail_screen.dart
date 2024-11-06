@@ -1,5 +1,6 @@
 import 'package:e_commerce_application_ui/common/widgets/icons/circular_icons.dart';
 import 'package:e_commerce_application_ui/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_application_ui/core/routes/app_pages.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/products/widgets/bottom_add_to_cart_widget.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/products/widgets/product_attribute_widget.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/products/widgets/product_image_slider.dart';
@@ -8,6 +9,7 @@ import 'package:e_commerce_application_ui/features/personalization/screens/produ
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:e_commerce_application_ui/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -20,7 +22,7 @@ class ProductDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final darkMode = THelperFunctions.isDarkMode(context);
     return Scaffold(
-     bottomNavigationBar: const BottomAddToCart(),
+      bottomNavigationBar: const BottomAddToCart(),
       appBar: AppBar(
         iconTheme:
             IconThemeData(color: darkMode ? TColors.white : TColors.dark),
@@ -52,6 +54,12 @@ class ProductDetailScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Adjust the radius as needed
+                        ),
+                      ),
                       child: const Text("Checkout"),
                     ),
                   ),
@@ -77,16 +85,29 @@ class ProductDetailScreen extends StatelessWidget {
                         TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                   ),
                   const Divider(),
-                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  const SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SectionHeading(title: 'Review(199)',showActionButton: false,),
-                      IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right3,size: 18,))
+                      const SectionHeading(
+                        title: 'Review(199)',
+                        showActionButton: false,
+                      ),
+                      IconButton(
+                          onPressed: () {
+                            Get.toNamed(Routes.productRatingScreen);
+                          },
+                          icon: const Icon(
+                            Icons.keyboard_arrow_right,
+                            size: 24,
+                          ))
                     ],
                   ),
-                  const SizedBox(height: TSizes.spaceBtwItems,),
-
+                  const SizedBox(
+                    height: TSizes.spaceBtwItems,
+                  ),
                 ],
               ),
             )

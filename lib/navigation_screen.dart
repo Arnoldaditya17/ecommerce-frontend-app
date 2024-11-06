@@ -1,4 +1,5 @@
 import 'package:e_commerce_application_ui/features/home/screens/home_screen.dart';
+import 'package:e_commerce_application_ui/features/personalization/screens/profile/profile_screen.dart';
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:e_commerce_application_ui/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -50,8 +51,6 @@ class NavigationController extends GetxController {
       color: Colors.blueAccent,
     ),
     const WishlistScreen(),
-    Container(
-      color: Colors.yellow,
-    )
+    const ProfileScreen(),
   ];
 }

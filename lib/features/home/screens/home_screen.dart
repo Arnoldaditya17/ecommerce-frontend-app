@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SearchContainer(
                     text: 'Search in store',
-                    icon: Iconsax.search_normal_1,
+                    icon: Iconsax.search_normal4,
                   ),
                   const SizedBox(
                     height: 15,
@@ -128,6 +128,8 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 280,
                     child: ListView.builder(
+                      padding: EdgeInsets.zero,
+                      primary: false,
                       addAutomaticKeepAlives: true,
                       itemCount: 3,
                       scrollDirection: Axis.horizontal,

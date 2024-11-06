@@ -15,10 +15,12 @@ class CartScreen extends StatelessWidget {
           backgroundColor: TColors.primary,
           title: Text("Cart",style: Theme.of(context).textTheme.headlineMedium,),
         ),
-        body: const Column(
-          children: [
+        body:  Column(
+          children: [],
+        )
 
-          ],
-        ));
+
+
+    );
   }
 }

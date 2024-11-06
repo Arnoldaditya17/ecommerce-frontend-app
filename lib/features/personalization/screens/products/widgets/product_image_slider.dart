@@ -27,7 +27,7 @@ class ProductImageSlider extends StatelessWidget {
                 padding: EdgeInsets.all(TSizes.productImageRadius * 2),
                 child: Center(
                   child: Image(
-                    image: AssetImage(TImages.productImage1),
+                    image: AssetImage(TImages.productImage6),
                   ),
                 ),
               ),

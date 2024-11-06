@@ -14,8 +14,7 @@ class SearchContainer extends StatelessWidget {
     this.onTap,
     this.showBackground = true,
     this.showBorder = true,
-    this.padding=const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-
+    this.padding = const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
   });
 
   final String text;
@@ -54,9 +53,15 @@ class SearchContainer extends StatelessWidget {
               ),
               const SizedBox(
                 width: 15,
-
               ),
-             const FadingTextAnimation(texts:[ 'Search for footwear',"Search for Clothes","Search for Furniture"]),
+              FadingTextAnimation(
+                texts: const [
+                  'Search for footwear',
+                  "Search for Clothes",
+                  "Search for Furniture"
+                ],
+                textStyle: TextStyle(color: dark ? TColors.softGrey:TColors.black, fontSize: 18),
+              ),
             ],
           ),
         ),

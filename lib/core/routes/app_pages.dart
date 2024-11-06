@@ -1,5 +1,8 @@
+import 'package:e_commerce_application_ui/features/personalization/screens/address/add_new_address_screen.dart';
+import 'package:e_commerce_application_ui/features/personalization/screens/address/user_address_screen.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/products/all_product_screen.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/products/product_detail_screen.dart';
+import 'package:e_commerce_application_ui/features/personalization/screens/products/product_rating_screen.dart';
 import 'package:get/get_instance/src/bindings_interface.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
@@ -60,6 +63,27 @@ class AppPages {
       page: () => const NavigationScreen(),
       binding: BindingsBuilder(
         () {},
+      ),
+    ),
+    GetPage(
+      name: _Paths.productRatingScreen,
+      page: () => const ProductRatingScreen(),
+      binding: BindingsBuilder(
+            () {},
+      ),
+    ),
+    GetPage(
+      name: _Paths.addressScreen,
+      page: () => const UserAddressScreen(),
+      binding: BindingsBuilder(
+            () {},
+      ),
+    ),
+    GetPage(
+      name: _Paths.addNewAddressScreen,
+      page: () => const AddNewAddressScreen(),
+      binding: BindingsBuilder(
+            () {},
       ),
     ),
 

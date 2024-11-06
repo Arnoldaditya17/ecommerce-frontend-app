@@ -49,6 +49,9 @@ dependencies:
   add_to_cart_animation: ^2.0.4
   badges: ^3.1.2
   readmore: ^3.0.0
+  flutter_rating_bar: ^4.0.1
+
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -84,6 +87,7 @@ flutter:
     - assets/images/content/
     - assets/images/banners/
     - assets/images/reviews/
+    - assets/lottie/
     - assets/images/products/
     - assets/icons/categories/
     - assets/images/animations/

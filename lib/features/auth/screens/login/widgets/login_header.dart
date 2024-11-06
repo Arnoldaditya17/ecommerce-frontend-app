@@ -1,3 +1,4 @@
+import 'package:e_commerce_application_ui/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import '../../../../../utils/helpers/helper_functions.dart';
@@ -13,9 +14,10 @@ class TLoginHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: TSizes.spaceBtwSections,),
         Lottie.asset(
-          'assets/lottie/Animation_1728302075927.json',
-          width: 200,
+          'assets/lottie/Animation-1730810323729.json',
+          width: 240,
           repeat: true,
           animate: true,
           reverse: true,
