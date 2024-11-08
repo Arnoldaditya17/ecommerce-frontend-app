@@ -5,7 +5,6 @@ import 'package:get_storage/get_storage.dart';
 
 import '../../../../core/routes/app_pages.dart';
 import '../../../repository/repository.dart';
-import '../../../utils/popups/full_screen_loader.dart';
 import '../../../utils/popups/loaders.dart';
 import '../models/get_storage_key.dart';
 
@@ -19,6 +18,8 @@ class LoginController extends GetxController {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  RxBool loading=false.obs;
+
 
   @override
   void onClose() {
@@ -27,7 +28,9 @@ class LoginController extends GetxController {
   }
 
   void validateLogin() async {
+    loading.value=true;
     if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+      loading.value=false;
       TLoaders.errorSnackBar(
         title: "Validation Error",
         message: "Email and Password cannot be empty",
@@ -36,40 +39,32 @@ class LoginController extends GetxController {
     }
 
     try {
-      // Start loading animation
-      TFullScreenLoader.openLoadingDialog(
-          'loading....', "assets/images/animations/Animation-1728393917852.json");
-
       Map<String, dynamic> data = {
         "email": emailController.text,
         "password": passwordController.text,
       };
 
-      // Using try-catch for error handling instead of onError
       try {
         final value = await repository.login(data);
-
-        // Stop the loading once login is successful
-        TFullScreenLoader.stopLoading();
         _getStorage.write(GetStorageKey.accessToken, value.accessToken);
         _getStorage.write(GetStorageKey.refreshToken, value.refreshToken);
 
+        loading.value = false;
         TLoaders.successSnackBar(
           title: 'Hurray!!',
           message: "Login Successful",
         );
         Get.offAllNamed(Routes.appNavigation);
       } catch (error) {
-        // Stop the loading and show error message if login fails
-        TFullScreenLoader.stopLoading();
+        loading.value=false;
+
         TLoaders.errorSnackBar(
           title: "Error",
           message: error.toString(),
         );
       }
     } catch (exception) {
-      // In case of unexpected error, stop loading and show error
-      TFullScreenLoader.stopLoading();
+      loading.value=false;
       TLoaders.errorSnackBar(
         title: "Error",
         message: 'Something Went Wrong',

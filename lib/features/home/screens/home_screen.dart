@@ -12,8 +12,9 @@ import '../../../core/routes/app_pages.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
+import '../../personalization/controllers/profile_controller.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<ProfileController> {
   const HomeScreen({super.key});
 
   @override
@@ -158,6 +159,8 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 280,
                     child: ListView.builder(
+
+                      padding: EdgeInsets.zero,
                       addAutomaticKeepAlives: true,
                       itemCount: 3,
                       scrollDirection: Axis.horizontal,

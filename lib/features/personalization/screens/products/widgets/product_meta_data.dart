@@ -77,7 +77,7 @@ class ProductMetaData extends StatelessWidget {
         const SizedBox(
           height: TSizes.spaceBtwItems / 1.5,
         ),
-        TBrandTitleWithVerifiedIcon(
+        const TBrandTitleWithVerifiedIcon(
           title: 'Nike',
           brandTextSize: TextSizes.small,
         ),

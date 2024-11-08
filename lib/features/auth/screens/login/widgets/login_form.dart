@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../core/routes/app_pages.dart';
+import '../../../../../utils/constants/colors.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 import '../../../controllers/login_controller.dart';
-
 
 class TLoginForm extends GetView<LoginController> {
   const TLoginForm({
@@ -65,7 +65,7 @@ class TLoginForm extends GetView<LoginController> {
                 /// Forget Password
                 TextButton(
                     onPressed: () {
-
+                      Get.toNamed(Routes.forgetPassword);
                     },
                     child: const Text(TTexts.forgetPassword)),
               ],
@@ -77,11 +77,19 @@ class TLoginForm extends GetView<LoginController> {
             /// Sign In Button
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                onPressed: (){
-               controller.validateLogin();
-                },
-                child: const Text(TTexts.signIn),
+              child: Obx(
+                () => ElevatedButton(
+                  onPressed: () {
+                    controller.validateLogin();
+                  },
+                  child: controller.loading.value
+                      ? const CircularProgressIndicator(
+                    color: TColors.lightGrey,
+                    backgroundColor: TColors.darkerGrey,
+                    strokeWidth: 3,
+                  )
+                      : const Text(TTexts.signIn),
+                ),
               ),
             ),
             const SizedBox(

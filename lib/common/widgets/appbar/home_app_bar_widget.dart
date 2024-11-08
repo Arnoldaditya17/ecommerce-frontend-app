@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../core/routes/app_pages.dart';
+import '../../../features/personalization/controllers/profile_controller.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../icons/cart_badge_icon.dart';
 import 'appbar.dart';
 
-class HomeAppBarWidget extends StatelessWidget {
+class HomeAppBarWidget extends GetView<ProfileController>{
   const HomeAppBarWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    final ProfileController controller = Get.find<ProfileController>();
     return TAppbar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,12 +26,14 @@ class HomeAppBarWidget extends StatelessWidget {
                 .labelMedium!
                 .apply(color: TColors.grey),
           ),
-          Text(
-            TTexts.homeAppbarSubTitle,
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium!
-                .apply(color: TColors.white),
+          Obx(
+            ()=> Text(
+              controller.name.value,
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium!
+                  .apply(color: TColors.white),
+            ),
           ),
         ],
       ),

@@ -54,7 +54,7 @@ class ProductAttributeWidget extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          ProductTitleText(
+                          const ProductTitleText(
                             title: 'Stock : ',
                             smallSize: true,
                           ),

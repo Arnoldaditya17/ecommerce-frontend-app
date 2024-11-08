@@ -4,15 +4,20 @@ import 'package:e_commerce_application_ui/common/widgets/list_tile/setting_menu_
 import 'package:e_commerce_application_ui/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:e_commerce_application_ui/utils/constants/sizes.dart';
+import 'package:e_commerce_application_ui/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../common/widgets/list_tile/profile_tile.dart';
+import '../../controllers/profile_controller.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends GetView<ProfileController> {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final ProfileController controller = Get.find<ProfileController>();
+    final darkMode = THelperFunctions.isDarkMode(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -106,12 +111,58 @@ class ProfileScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.defaultDialog(
+                          radius: 15,
+                          titlePadding: const EdgeInsets.only(top: 15),
+                          title: 'Don\'t Leave 😢',
+                          content: const Column(
+                            children: [
+                              Text('Are you Sure You want to Logout ?'),
+                            ],
+                          ),
+                          contentPadding: const EdgeInsets.all(15),
+                          backgroundColor: darkMode ? TColors.darkerGrey : TColors.light,
+                          confirm: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+                            decoration: BoxDecoration(
+                              color: TColors.primary, // Replace with your preferred color
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: TextButton(
+                              onPressed: () {
+                                controller.logOut();
+                              },
+                              child: const Text(
+                                'YES',
+                                style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold), // Text color to contrast background
+                              ),
+                            ),
+                          ),
+                          cancel: Container(
+                            padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+                            decoration: BoxDecoration(
+                              color: Colors.redAccent, // Replace with your preferred color
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: TextButton(
+                              onPressed: () {
+                                Get.back();
+                              },
+                              child: const Text(
+                                'NO',
+                                style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold), // Text color to contrast background
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                       child: const Text('Logout'),
-
                     ),
                   ),
-                  const SizedBox(height: TSizes.spaceBtwSections*2.5,)
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections * 2.5,
+                  )
                 ],
               ),
             ),

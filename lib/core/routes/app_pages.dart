@@ -8,10 +8,11 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:get/get_navigation/src/routes/transitions_type.dart';
 
 import '../../bindings/login_binding.dart';
+import '../../bindings/profile_binding.dart';
 import '../../features/auth/screens/forget_password.dart';
 import '../../features/auth/screens/login/login.dart';
 import '../../features/auth/screens/signup/signup.dart';
-import '../../features/personalization/screens/cart/cart_screen.dart';
+import '../../features/cart/cart_screen.dart';
 import '../../navigation_screen.dart';
 
 part 'app_routes.dart';
@@ -61,9 +62,7 @@ class AppPages {
     GetPage(
       name: _Paths.appNavigation,
       page: () => const NavigationScreen(),
-      binding: BindingsBuilder(
-        () {},
-      ),
+      binding:ProfileBinding(),
     ),
     GetPage(
       name: _Paths.productRatingScreen,
