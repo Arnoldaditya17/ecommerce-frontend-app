@@ -1,5 +1,5 @@
 import 'package:e_commerce_application_ui/features/home/screens/home_screen.dart';
-import 'package:e_commerce_application_ui/features/personalization/screens/address/user_address_screen.dart';
+import 'package:e_commerce_application_ui/features/personalization/screens/checkout/checkout.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/profile/profile_screen.dart';
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:e_commerce_application_ui/utils/helpers/helper_functions.dart';
@@ -73,7 +73,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     const HomeScreen(),
-    const UserAddressScreen(),
+    const CheckOutScreen(),
     const WishlistScreen(),
     const ProfileScreen(),
   ];

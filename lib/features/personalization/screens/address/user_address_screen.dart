@@ -25,7 +25,10 @@ class UserAddressScreen extends StatelessWidget {
         onPressed: () {
           Get.toNamed(Routes.addNewAddressScreen);
         },
-        child: const Icon(Iconsax.add),
+        child: const Icon(
+          Iconsax.add,
+          color: TColors.light,
+        ),
       ),
       body: const SingleChildScrollView(
         child: Padding(

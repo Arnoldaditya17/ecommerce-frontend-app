@@ -126,7 +126,7 @@ class HomeScreen extends StatelessWidget {
                     height: TSizes.spaceBtwItems,
                   ),
                   Container(
-                    decoration: const BoxDecoration(color: Colors.white),
+                    color: Colors.transparent,
                     height: 280,
                     child: ListView.builder(
                       padding: EdgeInsets.zero,
@@ -135,11 +135,10 @@ class HomeScreen extends StatelessWidget {
                       itemCount: 3,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (_, index) {
-                        return Container(
-                            padding: const EdgeInsets.all(8),
-                            color: Colors.white,
-                            child:
-                                ProductCardVertical()); // Make sure you return the CourseCard here
+                        return const Padding(
+                          padding: EdgeInsets.only(right: 15.0),
+                          child: ProductCardVertical(),
+                        ); // Make sure you return the CourseCard here
                       },
                     ),
                   ),
