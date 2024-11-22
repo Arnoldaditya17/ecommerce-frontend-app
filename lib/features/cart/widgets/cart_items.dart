@@ -25,8 +25,8 @@ class CartItems extends StatelessWidget {
               height: TSizes.spaceBtwSections,
             ),
         itemBuilder: (_, index) => RoundedContainer(
-          padding: const EdgeInsets.all(TSizes.defaultSpace),
-          backgroundColor: darkMode? Colors.white10 : Colors.white10,
+          padding: const EdgeInsets.all(TSizes.sm),
+          backgroundColor: darkMode? Colors.white10.withOpacity(0.03) : Colors.white10,
           borderColor: darkMode ? Colors.grey:TColors.primary,
           showBorder: true,
 
@@ -55,6 +55,6 @@ class CartItems extends StatelessWidget {
                 ],
               ),
         ),
-        itemCount: 14);
+        itemCount: 2);
   }
 }

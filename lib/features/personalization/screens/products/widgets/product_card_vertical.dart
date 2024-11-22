@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import '../../../../../common/widgets/containers/rounded_container.dart';
 import '../../../../../common/widgets/icons/circular_icons.dart';
 import '../../../../../common/widgets/images/rounded_image.dart';
-import '../../../../../common/widgets/style/shadow.dart';
 import '../../../../../common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import '../../../../../common/widgets/texts/product_title.dart';
 import '../../../../../core/routes/app_pages.dart';
@@ -25,9 +24,11 @@ class ProductCardVertical extends StatelessWidget {
       },
       child: Container(
         width: 180,
+        padding: const EdgeInsets.all(1),
         decoration: BoxDecoration(
+          //boxShadow: [ShadowStyle.verticalProductShadow],
           borderRadius: BorderRadius.circular(TSizes.productImageRadius),
-          color: dark ? TColors.darkerGrey : TColors.white,
+          color: dark ? TColors.darkerGrey : TColors.light,
         ),
         child: Column(
           children: [
@@ -35,7 +36,7 @@ class ProductCardVertical extends StatelessWidget {
               height: 160,
               width: 200,
               padding: const EdgeInsets.all(TSizes.sm),
-              backgroundColor: dark ? TColors.dark : TColors.light,
+              backgroundColor: dark ? TColors.dark : TColors.grey,
               child: Stack(
                 children: [
                   const RoundedImage(
