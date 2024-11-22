@@ -13,7 +13,7 @@ import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
@@ -125,7 +125,8 @@ class HomeScreen extends StatelessWidget{
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  SizedBox(
+                  Container(
+                    decoration: const BoxDecoration(color: Colors.white),
                     height: 280,
                     child: ListView.builder(
                       padding: EdgeInsets.zero,
@@ -134,10 +135,11 @@ class HomeScreen extends StatelessWidget{
                       itemCount: 3,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (_, index) {
-                        return const Padding(
-                          padding: EdgeInsets.only(right: 15.0),
-                          child: ProductCardVertical(),
-                        ); // Make sure you return the CourseCard here
+                        return Container(
+                            padding: const EdgeInsets.all(8),
+                            color: Colors.white,
+                            child:
+                                ProductCardVertical()); // Make sure you return the CourseCard here
                       },
                     ),
                   ),
@@ -155,10 +157,10 @@ class HomeScreen extends StatelessWidget{
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  SizedBox(
+                  Container(
+                    color: Colors.transparent,
                     height: 280,
                     child: ListView.builder(
-
                       padding: EdgeInsets.zero,
                       addAutomaticKeepAlives: true,
                       itemCount: 3,
@@ -180,7 +182,3 @@ class HomeScreen extends StatelessWidget{
     );
   }
 }
-
-
-
-
