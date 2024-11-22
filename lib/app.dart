@@ -20,7 +20,7 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       initialRoute: _getStorage.read(GetStorageKey.accessToken)==null
-          ?AppPages.initial
+          ?AppPages.appNavigation
           :AppPages.appNavigation,
       getPages: AppPages.routes,
     );
