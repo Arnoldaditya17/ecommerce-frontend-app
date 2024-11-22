@@ -74,28 +74,26 @@ class ProductMetaData extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: TSizes.spaceBtwItems / 1.5,
-        ),
-        const TBrandTitleWithVerifiedIcon(
-          title: 'Nike',
-          brandTextSize: TextSizes.small,
-        ),
         Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-
             CircularImage(
               image: TImages.shoeIcon,
               width: 32,
               height: 32,
               overLayerColor: darkMode ? TColors.white : TColors.black,
             ),
-
+            const Flexible(
+              child: TBrandTitleWithVerifiedIcon(
+                title: 'Nike',
+                brandTextSize: TextSizes.small,
+              ),
+            ),
           ],
         ),
-
-
-
+        const SizedBox(
+          height: TSizes.spaceBtwItems / 1.5,
+        ),
       ],
     );
   }

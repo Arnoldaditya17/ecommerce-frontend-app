@@ -1,4 +1,5 @@
 import 'package:e_commerce_application_ui/features/home/screens/home_screen.dart';
+import 'package:e_commerce_application_ui/features/personalization/screens/address/user_address_screen.dart';
 import 'package:e_commerce_application_ui/features/personalization/screens/profile/profile_screen.dart';
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:e_commerce_application_ui/utils/helpers/helper_functions.dart';
@@ -27,14 +28,39 @@ class NavigationScreen extends StatelessWidget {
           indicatorColor: darkMode
               ? TColors.white.withOpacity(0.1)
               : TColors.black.withOpacity(0.1),
-
-
-
           destinations: const [
-            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home',selectedIcon: Icon(Iconsax.home,color: TColors.primary,),),
-            NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store',selectedIcon: Icon(Iconsax.shop,color: TColors.primary,),),
-            NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist',selectedIcon: Icon(Iconsax.heart,color: TColors.primary,),),
-            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile',selectedIcon: Icon(Iconsax.user,color: TColors.primary,),),
+            NavigationDestination(
+              icon: Icon(Iconsax.home),
+              label: 'Home',
+              selectedIcon: Icon(
+                Iconsax.home,
+                color: TColors.primary,
+              ),
+            ),
+            NavigationDestination(
+              icon: Icon(Iconsax.shop),
+              label: 'Store',
+              selectedIcon: Icon(
+                Iconsax.shop,
+                color: TColors.primary,
+              ),
+            ),
+            NavigationDestination(
+              icon: Icon(Iconsax.heart),
+              label: 'Wishlist',
+              selectedIcon: Icon(
+                Iconsax.heart,
+                color: TColors.primary,
+              ),
+            ),
+            NavigationDestination(
+              icon: Icon(Iconsax.user),
+              label: 'Profile',
+              selectedIcon: Icon(
+                Iconsax.user,
+                color: TColors.primary,
+              ),
+            ),
           ],
         ),
       ),
@@ -47,9 +73,7 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
     const HomeScreen(),
-    Container(
-      color: Colors.blueAccent,
-    ),
+    const UserAddressScreen(),
     const WishlistScreen(),
     const ProfileScreen(),
   ];

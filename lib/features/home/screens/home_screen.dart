@@ -12,9 +12,8 @@ import '../../../core/routes/app_pages.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
-import '../../personalization/controllers/profile_controller.dart';
 
-class HomeScreen extends GetView<ProfileController> {
+class HomeScreen extends StatelessWidget{
   const HomeScreen({super.key});
 
   @override
@@ -31,7 +30,7 @@ class HomeScreen extends GetView<ProfileController> {
                     height: 10,
                   ),
                   const SearchContainer(
-                    text: 'Search in store',
+                    text: 'Search in Store',
                     icon: Iconsax.search_normal4,
                   ),
                   const SizedBox(

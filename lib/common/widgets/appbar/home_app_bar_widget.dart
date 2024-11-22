@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../core/routes/app_pages.dart';
 import '../../../features/personalization/controllers/profile_controller.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../icons/cart_badge_icon.dart';
 import 'appbar.dart';
 
-class HomeAppBarWidget extends GetView<ProfileController>{
+class HomeAppBarWidget extends StatelessWidget{
   const HomeAppBarWidget({
     super.key,
   });
@@ -39,8 +38,7 @@ class HomeAppBarWidget extends GetView<ProfileController>{
       ),
       action: [
         CartCounterIcon(
-          iconColor: TColors.white,
-          onPressed: () => Get.toNamed(Routes.cartScreen),
+          iconColor: TColors.white, onPressed: () { },
         )
       ],
     );

@@ -2,6 +2,7 @@ import 'package:e_commerce_application_ui/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_application_ui/common/widgets/containers/primary_header_container.dart';
 import 'package:e_commerce_application_ui/common/widgets/list_tile/setting_menu_tile.dart';
 import 'package:e_commerce_application_ui/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_application_ui/core/routes/app_pages.dart';
 import 'package:e_commerce_application_ui/utils/constants/colors.dart';
 import 'package:e_commerce_application_ui/utils/constants/sizes.dart';
 import 'package:e_commerce_application_ui/utils/helpers/helper_functions.dart';
@@ -56,7 +57,9 @@ class ProfileScreen extends GetView<ProfileController> {
                     subTitle: 'set shopping delivery address',
                     title: 'My Addresses',
                     icon: Iconsax.safe_home,
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(Routes.addressScreen);
+                    },
                   ),
                   SettingMenuTile(
                     subTitle: 'Your all Order are managed here',
